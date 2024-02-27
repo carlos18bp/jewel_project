@@ -1,5 +1,5 @@
 <template>
-    <header></header>
+    <Header></Header>
 
     <h1>PRODUCT DETAIL VIEW</h1>
 
