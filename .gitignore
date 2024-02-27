@@ -1,9 +1,9 @@
 db.sqlite3
+jewel_project/__pycache__/
 jewel/__pycache__/
 jewel/management/commands/__pycache__/
 jewel/migrations/__pycache__/
 jewel/models/__pycache__/
 jewel/serializers/__pycache__/
 jewel/views/__pycache__/
-jewel_project/__pycache__/
 media/product_images

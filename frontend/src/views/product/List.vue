@@ -1,9 +1,31 @@
 <template>
-    <header></header>
+    <Header></Header>
 
-    <h1>PRODUCT LIST VIEW</h1>
+    <div class="flex flex-col space-y-8">
+        <section class="flex flex-col bg-cover bg-product-1 h-96 text-white justify-center items-center">
+            <div class="text-center backdrop-opacity-30 backdrop-invert bg-white/30">
+                <p class="text-lg uppercase">Fall Release</p>
+                <p class="text-3xl">the autumn equinox</p>
+                <p class="p-12"> 
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod<br>
+                    tempor incididunt ut labore et dolore magna aliqua.<br>
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                </p>
+            </div>
+        </section>
 
-    <Footer></Footer>
+        <section class="flex pl-8">
+            <p class="text-lg pr-12">Necklaces</p>
+            <p>With new beginnings come more pendants.</p>
+        </section>
+
+        <section class="flex pl-8">
+            <p class="text-lg pr-12">Earrings</p>
+            <p>Adorn your ears with the new atmosphere.</p>
+        </section>
+
+        <Footer></Footer>
+    </div>
 </template>
 
 <script setup>
