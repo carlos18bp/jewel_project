@@ -1,16 +1,22 @@
 <template>
-    <footer class="flex flex-col bg-black w-full items-center">
-        <img class="w-52" src="@/assets/images/logo.png" alt="logo image">
-        <div class="flex p-6 pt-0 space-x-2 uppercase text-white">
+    <footer class="flex flex-col bg-black w-full items-center pb-16">
+        <img class="w-72" src="@/assets/images/logo.png" alt="logo image">
+        <div class="flex p-6 space-x-2 uppercase text-white font-regular">
             <a>
                 <RouterLink :to="{ name: 'home' }">
-                    Home |
+                    Home
                 </RouterLink>
             </a>
             <a>
+                |
+            </a>
+            <a>
                 <RouterLink :to="{ name: 'about_us' }">
-                    About Us |
+                    About Us
                 </RouterLink>
+            </a>
+            <a>
+                |
             </a>
             <a>
                 <RouterLink :to="{ name: 'products' }">

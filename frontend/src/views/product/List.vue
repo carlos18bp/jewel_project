@@ -2,11 +2,11 @@
     <Header></Header>
 
     <div class="flex flex-col space-y-8">
-        <section class="flex flex-col bg-cover bg-product-1 h-96 text-white justify-center items-center">
-            <div class="text-center backdrop-opacity-30 backdrop-invert bg-white/30">
-                <p class="text-lg uppercase">Fall Release</p>
-                <p class="text-3xl">the autumn equinox</p>
-                <p class="p-12"> 
+        <section class="flex flex-col bg-cover bg-product-1 p-32 text-white justify-center items-center">
+            <div class="text-center">
+                <h2 class="text-lg uppercase font-regular">Fall Release</h2>
+                <h1 class="text-6xl font-regular">the autumn equinox</h1>
+                <p class="p-12 text-3xl font-regular"> 
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod<br>
                     tempor incididunt ut labore et dolore magna aliqua.<br>
                     Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
