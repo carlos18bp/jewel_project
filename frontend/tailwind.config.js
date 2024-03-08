@@ -13,9 +13,19 @@ export default {
       },
       colors: {
         cream: '#F4F0EB'
-      }
+      },
+      fontFamily: {
+        'regular': ['Karla-Regular', 'sans-serif'],
+        'bold': ['Cormorant-Garmont-Bold', 'sans-serif'],
+        'special-regular': ['Cormorant-Garamont-Regular', 'sans-serif'],
+        'italic': ['Cormorant-Garamont-Italic', 'sans-serif'],
+      },
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/aspect-ratio'),
+    require('@tailwindcss/forms'),
+    require('@tailwindcss/typography'),
+  ],
 }
 
