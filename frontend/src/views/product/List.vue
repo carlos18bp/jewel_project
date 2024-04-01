@@ -1,23 +1,8 @@
 <template>
-  <Header></Header>
-
-  <div class="flex flex-col space-y-8">
-    <section
-      class="flex flex-col bg-cover bg-product-1 p-32 text-white justify-center items-center"
-    >
-      <div class="text-center">
-        <h2 class="text-lg uppercase font-regular">Fall Release</h2>
-        <h1 class="text-6xl font-regular">the autumn equinox</h1>
-        <p class="p-12 text-3xl font-regular">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod<br />
-          tempor incididunt ut labore et dolore magna aliqua.<br />
-          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-          nisi ut aliquip ex ea commodo consequat.
-        </p>
-      </div>
-    </section>
-
+<Header></Header>
+<InitialPic :data="initialBannerData"></InitialPic>
+<section id="catalog">
+  <div class="p-8">
     <div class="col-span-4 md:col-span-3">
       <div class="mx-auto pt-8 pb-16 max-w-7xl">
         <div class="mt-6 grid gap-x-6 gap-y-10 md:grid-cols-2 xl:grid-cols-3">
@@ -57,7 +42,7 @@
         </div>
 
         <nav
-          class="flex items-center justify-between border-t border-gray-200 px-4"
+          class="flex items-center justify-between border-t border-gray-200 px-4 mt-8"
         >
           <!-- Previous page button -->
           <a
@@ -108,26 +93,43 @@
       </div>
     </div>
 
-    <Footer></Footer>
   </div>
+</section>
+<Footer></Footer>
 </template>
-
 <script setup>
 import Header from "@/components/layouts/Header.vue";
-import Footer from "@/components/layouts/Footer.vue";
+import InitialPic from "@/components/layouts/InitialPic.vue";
+import Footer  from '@/components/layouts/Footer.vue'
 import { computed, onMounted, ref } from "vue";
 import { useProductStore } from "@/stores/product";
+import { ArrowLongLeftIcon, ArrowLongRightIcon } from "@heroicons/vue/20/solid";
+import { useRouter } from "vue-router";
+import BraceletImage from '@/assets/images/product/Bracelet/Bracelet.jpg';
+import NecklesImage from '@/assets/images/product/Neckles/Neckles.jpg';
+import EarringImage from '@/assets/images/product/Earring/Earring.jpg';
+import JewelImage from '@/assets/images/product/Jewel/Jewel.jpg';
 
+const url = ref()
+const router = useRouter();
+const category_id = router.currentRoute.value.params.categoryId;
 const productStore = useProductStore();
 const products = ref([]);
 const currentPage = ref(1);
 const productsPerPage = 6;
 const isProductsLoaded = ref(false);
+const filteredProducts = ref()
+
 
 onMounted(async () => {
+  window.scrollTo({ top: 0 });
   await productStore.fetchProductsData();
   products.value = productStore.products;
-
+  if (category_id){
+    filteredProducts.value = products.value.filter(product => product.category === category_id)
+  } else {
+    filteredProducts.value = products.value
+  }
   isProductsLoaded.value = true;
 });
 
@@ -144,7 +146,7 @@ const paginatedProducts = computed(() => {
   if (isProductsLoaded.value) {
     const start = (currentPage.value - 1) * productsPerPage;
     const end = start + productsPerPage;
-    return products.value.slice(start, end);
+    return filteredProducts.value.slice(start, end);
   }
   return [];
 });
@@ -164,4 +166,30 @@ const goToPage = (page) => {
     }, 0);
   }
 };
+
+switch (category_id) {
+      case '1':
+        url.value = BraceletImage;
+        break;
+      case '2':
+        url.value = NecklesImage;
+        break;
+      case '3':
+        url.value = EarringImage;
+        break;
+      case '4':
+        url.value = JewelImage;
+        console.log(category_id)
+        break;
+    }
+
+const initialBannerData = {
+    background_image: {
+      url: url,
+      alt: "Initial Banner Ornamental Iron Works",
+    },
+    title: "Artistic Iron Works:<br>Crafting Masterpieces",
+    classes: "text-white",
+    goToId: 'catalog'
+  };
 </script>

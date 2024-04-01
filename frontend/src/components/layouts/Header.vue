@@ -1,13 +1,13 @@
 <template>
     <header>
       <!-- Navbar para pantallas grandes -->
-      <nav class="mx-auto flex items-center justify-between lg:px-8 h-16 pl-6 lg:h-28" aria-label="Global">
-        <div class="flex flex-1">
-          <div class="hidden ml-16 lg:flex lg:gap-x-12">
+      <nav class="mx-auto flex items-center justify-between lg:px-8 h-16 pl-6 lg:h-16" aria-label="Global">
+        <div class="flex flex-1 items-center">
+          <div class="hidden lg:flex lg:gap-x-12">
             <!-- Tus enlaces para escritorio -->
             <a class="text-xl uppercase font-regular leading-6 text-black_p">
-              <RouterLink :to="{ name: 'products' }" class="btn btn-primary btn-lg">
-                Shop
+              <RouterLink :to="{ name: 'catalog' }" class="btn btn-primary btn-lg">
+                Catalog
               </RouterLink>
             </a>
             <a class="text-xl uppercase font-regular leading-6 text-black_p">
@@ -24,13 +24,15 @@
             </button>
           </div>
         </div>
-        <a class="hidden lg:inline-block absolute left-1/2">
+        <div class="flex justify-center items-center lg:absolute lg:inset-x-0 lg:left-1/2 transform lg:-translate-x-1/2">
           <!-- Logo -->
-          <RouterLink :to="{ name: 'home' }">
-            <img src="@/assets/images/minimal_logo.png" class="w-28">
+          <RouterLink :to="{ name: 'home' }" class="lg:inline-block">
+            <img src="@/assets/images/minimal_logo.png" class="w-16" alt="Logo">
           </RouterLink>
-        </a>
+        </div>
       </nav>
+
+
   
       <!-- Navbar para dispositivos móviles -->
       <Dialog as="div" class="lg:hidden" @close="mobileMenuOpen = false" :open="mobileMenuOpen">
@@ -39,7 +41,7 @@
           <DialogPanel class="fixed inset-y-0 left-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
             <div class="flex items-center justify-between">
               <a href="#" class="-m-1.5 p-1.5">
-                <span class="sr-only">Senses Candles By Kate </span>
+                <span class="sr-only">Maria Mexican Jewelry</span>
                 <img class="h-8 w-auto" src="@/assets/images/logo.png" alt="" />
               </a>
               <button type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700" @click="mobileMenuOpen = false">
@@ -77,7 +79,7 @@
   // Enlaces para dispositivos móviles
   const mobileLinks = [
     { name: 'Home', href: '/'},
-    { name: 'Shop', href: 'products' },
+    { name: 'Catalog', href: 'catalog' },
     { name: 'About Us', href: 'about_us' },
   ]
   
