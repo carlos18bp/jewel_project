@@ -12,6 +12,7 @@ def products_serializer(products):
             'title': product.title,
             'description': product.description,
             'price': product.price,
+            'category': product.category,
             'images': _get_images(product.images.all()),
         }
         products_serialized.append(product_data)
@@ -29,3 +30,4 @@ def _get_images(images):
         images_serialized.append(resource_data)
     
     return images_serialized
+

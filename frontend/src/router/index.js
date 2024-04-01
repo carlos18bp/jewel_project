@@ -14,14 +14,19 @@ routes: [
         component: () => import('@/views/product/Detail.vue')
     },
     {
-        path: '/products',
-        name: 'products',
-        component: () => import('@/views/product/List.vue')
+        path: '/catalog',
+        name: 'catalog',
+        component: () => import('@/views/product/Catalog.vue')
     },
     {
         path: '/about_us',
         name: 'about_us',
         component: () => import('@/views/AboutUs.vue')
+    },
+    {
+        path: '/list_products/:categoryId?',
+        name: 'list_products',
+        component: () => import('@/views/product/List.vue')
     },
 ]
 });

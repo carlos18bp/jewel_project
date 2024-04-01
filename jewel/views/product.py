@@ -13,5 +13,4 @@ def index(request):
     :rtype: django.http.JsonResponse
     """
     products = Product.objects.all().order_by('-id')
-    
     return JsonResponse(products_serializer(products), safe=False)

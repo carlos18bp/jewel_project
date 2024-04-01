@@ -1,24 +1,28 @@
 <template>
     <Header></Header>
 
-    <section class="bg-cover bg-about-us flex flex-col h-full">
-        <div class="flex flex-col text-white p-16 py-48 w-1/2">
-            <h1 class="text-6xl font-bold relative pb-16">About Us
-                <span class="absolute bottom-0 left-0 right-0 h-0.5 bg-gray-300 opacity-50"></span>
-            </h1>
-            <p class="text-2xl font-regular mt-16">
-                This is an About Us page for this conceptual jewelry website, helping viewers become accustomed to Apollonian and its purpose, if it were real.<br><br>
-                
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.<br><br>
-
-                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.<br><br>
-
-                Vel eros donec ac odio tempor orci dapibus ultrices. Mauris vitae ultricies leo integer. Placerat duis ultricies lacus sed turpis tincidunt id.<br><br>
-                
-                Augue mauris augue neque gravida in fermentum et.
-            </p>
-       </div>
-    </section>
+            <div class="relative h-screen">
+                <div class="absolute inset-0">
+                    <img
+                    class="w-full h-full object-cover"
+                    src="@/assets/images/aboutUs/about_us_1.png"
+                    alt="MARIA MEXICAN DESIGN JEWELRY About Us"
+                    />
+                </div>
+                <div class="absolute p-16 inset-0 flex items-center">
+                    <div>
+                        <h1 class="text-6xl text-white font-bold w-1/2 border-2 border-transparent border-b-white/50 pb-6">About Us</h1>
+                        <p class="text-white text-xl font-regular mt-8 w-1/2"> 
+                            We are a Mother and Daughter Designers, our love for designing Jewelry begins because we have always liked creativity and art, and we realized that by mixing wire with other materials we can create a work of art that can be worn on the body, we decided (realized) that this was our thing.<br><br> We were accepted by National Geographic as Mexican Artisans to sell our handmade Jewelry on the Novica website, and we have invited to several fairs to show our work.<br><br>Thank you for reading a little piece of our history, we hope you like our designs and your experience on the page is enyoing.
+                        </p>
+                        <button class="uppercase border-2 w-32 p-2 text-white font-regular mt-6 hover:text-black hover:bg-white">
+                            <RouterLink :to="{ name: 'catalog' }">
+                                Catalog
+                            </RouterLink>
+                        </button>
+                    </div>
+                </div>
+            </div>
 
     <Footer></Footer>
 </template>

@@ -19,8 +19,8 @@
                 |
             </a>
             <a>
-                <RouterLink :to="{ name: 'products' }">
-                    Shop
+                <RouterLink :to="{ name: 'catalog' }">
+                    Catalog
                 </RouterLink>
             </a>
         </div>       
