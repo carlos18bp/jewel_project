@@ -19,6 +19,7 @@ class Product(models.Model):
         ('1', 'Bracelets'),
         ('2', 'Necklaces'),
         ('3', 'Earrings'),
+        ('4', 'Rings'),
     ]
 
     title = models.CharField(max_length=40)

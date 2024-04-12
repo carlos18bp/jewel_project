@@ -19,9 +19,15 @@ from django.urls import path
 from jewel.views import product
 from django.conf import settings
 from django.conf.urls.static import static
+from django.views.generic import TemplateView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', TemplateView.as_view(template_name='index.html')),
+    path('catalog/', TemplateView.as_view(template_name='index.html')),
+    path('about_us/', TemplateView.as_view(template_name='index.html')),
+    path('list_products/<int:categoryId>', TemplateView.as_view(template_name='index.html')),
+    path('product/<int:product_id>', TemplateView.as_view(template_name='index.html')),
     path('products/', product.index, name='products'),
 ]
 
