@@ -4,26 +4,44 @@
 
 
 @font-face {
-    font-family: 'Cormorant-Garmont-Bold';
-    src: url('./assets/fonts/CormorantGaramond-Bold.woff2') format('woff2');
+    font-family: 'Zilla-Slab-Bold';
+    src: url('./assets/fonts/ZillaSlab-Bold.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
   }
 @font-face {
-    font-family: 'Karla-Regular';
-    src: url('./assets/fonts/Karla-Regular.woff2') format('woff2');
+    font-family: 'Zilla-Slab-Semibold';
+    src: url('./assets/fonts/ZillaSlab-SemiBold.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
   }
 @font-face {
-    font-family: 'Cormorant-Garamont-Regular';
-    src: url('./assets/fonts/CormorantGaramond-Regular.ttf') format('truetype');
+    font-family: 'Zilla-Slab-Medium';
+    src: url('./assets/fonts/ZillaSlab-Medium.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
   }
 @font-face {
-    font-family: 'Cormorant-Garamont-Italic';
-    src: url('./assets/fonts/CormorantGaramond-Italic.ttf') format('truetype');
+    font-family: 'Zilla-Slab-Regular';
+    src: url('./assets/fonts/ZillaSlab-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+@font-face {
+    font-family: 'Zilla-Slab-Italic';
+    src: url('./assets/fonts/ZillaSlab-Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+@font-face {
+    font-family: 'Zilla-Slab-Light';
+    src: url('./assets/fonts/ZillaSlab-Light.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+@font-face {
+    font-family: 'Mayan';
+    src: url('./assets/fonts/Mayan.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
   }

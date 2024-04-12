@@ -105,12 +105,14 @@ import { computed, onMounted, ref } from "vue";
 import { useProductStore } from "@/stores/product";
 import { ArrowLongLeftIcon, ArrowLongRightIcon } from "@heroicons/vue/20/solid";
 import { useRouter } from "vue-router";
-import BraceletImage from '@/assets/images/product/Bracelet/Bracelet.jpg';
-import NecklesImage from '@/assets/images/product/Neckles/Neckles.jpg';
-import EarringImage from '@/assets/images/product/Earring/Earring.jpg';
+import BraceletImage from '@/assets/images/product/Bracelet/BraceletP.jpg';
+import NecklacesImage from '@/assets/images/product/Neckles/NecklaceP.jpg';
+import EarringImage from '@/assets/images/product/Earring/EarringP.jpg';
+import RingImage from '@/assets/images/product/Ring/RingsP.jpg';
 import JewelImage from '@/assets/images/product/Jewel/Jewel.jpg';
 
 const url = ref()
+const title = ref()
 const router = useRouter();
 const category_id = router.currentRoute.value.params.categoryId;
 const productStore = useProductStore();
@@ -125,7 +127,7 @@ onMounted(async () => {
   window.scrollTo({ top: 0 });
   await productStore.fetchProductsData();
   products.value = productStore.products;
-  if (category_id){
+  if (category_id != '5'){
     filteredProducts.value = products.value.filter(product => product.category === category_id)
   } else {
     filteredProducts.value = products.value
@@ -136,7 +138,7 @@ onMounted(async () => {
 // Calculate the total number of pages
 const totalPages = computed(() => {
   if (isProductsLoaded.value) {
-    return Math.ceil(products.value.length / productsPerPage);
+    return Math.ceil(filteredProducts.value.length / productsPerPage);
   }
   return 0;
 });
@@ -170,25 +172,32 @@ const goToPage = (page) => {
 switch (category_id) {
       case '1':
         url.value = BraceletImage;
+        title.value = 'Bracelet';
         break;
       case '2':
-        url.value = NecklesImage;
+        url.value = NecklacesImage;
+        title.value = 'Necklaces';
         break;
       case '3':
         url.value = EarringImage;
+        title.value = 'Earrings';
         break;
       case '4':
+        url.value = RingImage;
+        title.value = 'Rings';
+        break;
+      case '5':
         url.value = JewelImage;
-        console.log(category_id)
+        title.value = 'Jewel';
         break;
     }
 
 const initialBannerData = {
     background_image: {
       url: url,
-      alt: "Initial Banner Ornamental Iron Works",
+      alt: "Initial Banner",
     },
-    title: "Artistic Iron Works:<br>Crafting Masterpieces",
+    title: title,
     classes: "text-white",
     goToId: 'catalog'
   };

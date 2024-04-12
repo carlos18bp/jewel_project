@@ -1,7 +1,7 @@
 <template>
     <footer class="flex flex-col bg-black w-full items-center pb-16">
         <img class="w-72" src="@/assets/images/logo.png" alt="logo image">
-        <div class="flex p-6 space-x-2 uppercase text-white font-regular">
+        <div class="flex p-6 space-x-2 uppercase text-white font-mayan tracking-widest">
             <a>
                 <RouterLink :to="{ name: 'home' }">
                     Home

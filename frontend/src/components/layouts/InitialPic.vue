@@ -7,14 +7,14 @@
           :alt="props.data.background_image.alt"
         />
       </div>
+      <div class="absolute inset-0 bg-black opacity-50"></div>
       <div class="absolute inset-0 flex items-center justify-center">
         <h1
-          class="text-8xl text-center font-bold leading-normal"
+          class="text-6xl md:text-7xl xl:text-8xl text-center font-mayan leading-normal"
           :class="props.data.classes"
-          v-html="props.data.title"></h1>
+          v-html="props.data.title.value"></h1>
       </div>
       <a 
-        href="#"
         @click.prevent="scrollToTarget"
         class="absolute bottom-8 left-1/2 transform -translate-x-1/2">
         <img src="@/assets/images/vectors/arrow.png" alt="Arrow to down" />

@@ -5,12 +5,12 @@
         <div class="flex flex-1 items-center">
           <div class="hidden lg:flex lg:gap-x-12">
             <!-- Tus enlaces para escritorio -->
-            <a class="text-xl uppercase font-regular leading-6 text-black_p">
+            <a class="text-xl uppercase font-light leading-6 text-black_p">
               <RouterLink :to="{ name: 'catalog' }" class="btn btn-primary btn-lg">
                 Catalog
               </RouterLink>
             </a>
-            <a class="text-xl uppercase font-regular leading-6 text-black_p">
+            <a class="text-xl uppercase font-light leading-6 text-black_p">
               <RouterLink :to="{ name: 'about_us' }" class="btn btn-primary btn-lg">
                 About Us
               </RouterLink>
@@ -53,10 +53,7 @@
               <div class="-my-6 divide-y divide-gray-500/10">
                 <!-- Tus enlaces para dispositivos móviles -->
                 <a v-for="item in mobileLinks" :key="item.name" :href="item.href" :class="{ 'bg-gray-100 text-black_p': isActive(item.name), 'text-gray-900': !isActive(item.name) }" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 hover:bg-gray-50">{{ item.name }}</a>
-                
               </div>
-              
-              <!-- Enlace de inicio de sesión para dispositivos móviles -->
               
             </div>
           </DialogPanel>
@@ -79,15 +76,13 @@
   // Enlaces para dispositivos móviles
   const mobileLinks = [
     { name: 'Home', href: '/'},
-    { name: 'Catalog', href: 'catalog' },
-    { name: 'About Us', href: 'about_us' },
+    { name: 'Catalog', href: '/catalog' },
+    { name: 'About Us', href: '/about_us' },
   ]
   
   // Función para determinar si un enlace está activo
   const isActive = (name) => {
-    // Aquí puedes implementar la lógica para determinar si el enlace está activo
-    // Por ejemplo, podrías comparar el nombre del enlace con el nombre de la ruta actual
-    return false // Cambia esto según tu lógica
+    return false 
   }
   
   </script>
